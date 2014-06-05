@@ -16,7 +16,7 @@ namespace VirtualWall.Droid
 
         protected override IMvxApplication CreateApp()
         {
-            var nfcService = new NfcService();
+            var nfcService = new NfcService(new TagGeneratorService());
             Mvx.RegisterSingleton<INfcService>(nfcService);
             return new Core.App();
         }

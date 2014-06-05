@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Input;
 using Cirrious.MvvmCross.ViewModels;
+using VirtualWall.Core.Models.Trello;
+using VirtualWall.Core.Nfc;
 using VirtualWall.Core.Services;
 
 namespace VirtualWall.Core.ViewModels 
@@ -8,10 +11,12 @@ namespace VirtualWall.Core.ViewModels
     public class CardDetailsViewModel : MvxViewModel 
     {
         private readonly ICardService _cardService;
+        private readonly INfcService _nfcService;
 
-        public CardDetailsViewModel(ICardService cardService)
+        public CardDetailsViewModel(ICardService cardService, INfcService nfcService)
         {
             _cardService = cardService;
+            _nfcService = nfcService;
         }
 
         public class Nav {
@@ -24,9 +29,21 @@ namespace VirtualWall.Core.ViewModels
             CardDetail = _cardService.GetCardForId(navigation.Id);
         }
 
-        public CardDetail CardDetail { get; private set; }
+        public TrelloCard CardDetail { get; private set; }
 
-        public IList<CardActivity> CardActivities { get { return CardDetail.CardActivities; } }        
+        //public IList<CardActivity> CardActivities { get { return CardDetail.CardActivities; } }
+
+        public ICommand WriteNfcCommand {
+            get {
+                return new MvxCommand(() => _nfcService.WriteCardAction(CardDetail.ShortLink));
+            }
+        }
+
+        public ICommand DeepLinkCommand {
+            get {
+                return new MvxCommand(() => _nfcService.DeepLinkTo(CardDetail.ShortUrl));
+            }
+        }
     }
 
     

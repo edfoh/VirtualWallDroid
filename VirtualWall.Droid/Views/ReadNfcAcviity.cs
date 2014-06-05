@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Android.App;
@@ -8,16 +5,12 @@ using Android.Content;
 using Android.Nfc;
 using Android.Nfc.Tech;
 using Android.OS;
-using Android.Runtime;
 using Android.Util;
-using Android.Views;
 using Android.Widget;
 using Cirrious.CrossCore;
-using Cirrious.MvvmCross.Droid.Views;
 using Java.IO;
 using Java.Lang;
 using VirtualWall.Core.Nfc;
-using Exception = System.Exception;
 
 namespace VirtualWall.Droid.Views
 {
@@ -32,7 +25,9 @@ namespace VirtualWall.Droid.Views
         
         private INfcService _nfcService;
         private INfcService NfcService { get { return _nfcService = _nfcService ?? Mvx.Resolve<INfcService>(); } }
-        
+
+        private ITagGeneratorService _tagGeneratorService;
+        private ITagGeneratorService TagGeneratorService { get { return _tagGeneratorService = _tagGeneratorService ?? Mvx.Resolve<ITagGeneratorService>(); } }
 
         protected override void OnCreate(Bundle bundle) 
         {
@@ -141,12 +136,20 @@ namespace VirtualWall.Droid.Views
         private void OnSuccessfulRead(string nfcData) {
             if (NfcService.DisplayCardAction == null)
             {
-                Toast.MakeText(Application.Context, "Cannot read card id from nfc...", ToastLength.Long);
+                Toast.MakeText(Application.Context, "Cannot read card id from nfc...", ToastLength.Long).Show();
             }
             else
             {
-                Finish();
-                NfcService.DisplayCardAction(1);   
+                var tagData = TagGeneratorService.RetrieveData(nfcData);
+                if (!tagData.IsValid)
+                {
+                     Toast.MakeText(Application.Context, "No card id found....", ToastLength.Long).Show();                    
+                }                
+                else
+                {
+                    NfcService.DisplayCardAction(tagData.CardId);           
+                }               
+                Finish();                
             }            
         }
 
@@ -168,12 +171,11 @@ namespace VirtualWall.Droid.Views
             } catch (Android.Content.IntentFilter.MalformedMimeTypeException) {
                 throw new RuntimeException("Check your mime type.");
             }
-
-            //adapter.EnableForegroundDispatch(activity, pendingIntent, filters, techList);
+            adapter.EnableForegroundDispatch(activity, pendingIntent, filters, techList);
         }
 
         public static void StopForegroundDispatch(Activity activity, NfcAdapter adapter) {
-            //adapter.DisableForegroundDispatch(activity);
+            adapter.DisableForegroundDispatch(activity);
         }
     }
 }

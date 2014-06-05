@@ -93,8 +93,10 @@
     <Compile Include="Views\CardDetailsView.cs" />
     <Compile Include="Views\FirstView.cs" />
     <Compile Include="Views\ReadNfcAcviity.cs" />
+    <Compile Include="Views\WriteNfcActivity.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />

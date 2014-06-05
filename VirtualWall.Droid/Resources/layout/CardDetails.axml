@@ -16,12 +16,12 @@
             android:layout_height="fill_parent"
             android:textSize="20dp"
             android:text="description"
-            local:MvxBind="Text CardDetail.Description" />
+            local:MvxBind="Text CardDetail.Name" />
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:textSize="10dp"
-            local:MvxBind="Text CardDetail.Owner" />
+            local:MvxBind="Text CardDetail.Desc" />
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
@@ -30,17 +30,17 @@
         android:layout_weight="1"
         android:layout_marginBottom="5dp"
         android:background="#000000">
-        <TextView
+    <!--<TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:text="Activities" />
-        <Mvx.MvxListView
+            android:text="Activities" />-->
+    <!--<Mvx.MvxListView
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             local:MvxBind="ItemsSource CardActivities"
-            local:MvxItemTemplate="@layout/activity_detail" />
+            local:MvxItemTemplate="@layout/activity_detail" />-->
     </LinearLayout>
 <!-- Footer -->
     <LinearLayout
@@ -49,8 +49,15 @@
         android:layout_height="wrap_content">
         <Button
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:text="Deep Link" />
+            android:text="Deep Link"
+            local:MvxBind="Click DeepLinkCommand" />
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="Write to NFC"
+            local:MvxBind="Click WriteNfcCommand" />
     </LinearLayout>
 </LinearLayout>
