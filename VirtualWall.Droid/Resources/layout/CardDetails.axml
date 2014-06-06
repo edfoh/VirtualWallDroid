@@ -14,14 +14,19 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:textSize="20dp"
+            android:textSize="30dp"
             android:text="description"
             local:MvxBind="Text CardDetail.Name" />
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:textSize="10dp"
+            android:textSize="20dp"
             local:MvxBind="Text CardDetail.Desc" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:textSize="30dp"
+            local:MvxBind="Text CardDetail.SwimLane" />
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"

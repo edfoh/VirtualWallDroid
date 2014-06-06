@@ -10,7 +10,9 @@
 
         public string ShortLink { get; set; }
 
-		public string Status { get; set; }
+		public string SwimLane { get; set; }
+
+	    public string IdBoard { get; set; }
 	}
 }
 
