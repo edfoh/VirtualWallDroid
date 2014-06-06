@@ -9,9 +9,9 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="R"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/Redo"
             local:MvxBind="Click RefreshCommand" />
         <EditText
             android:layout_width="0px"

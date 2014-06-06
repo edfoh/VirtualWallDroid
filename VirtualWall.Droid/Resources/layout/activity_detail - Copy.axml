@@ -4,36 +4,11 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="30dp">
-    <LinearLayout
-        android:orientation="horizontal"
+    <TextView
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="10dp"
-            android:layout_marginRight="5dp"
-            android:textStyle="bold"
-            android:text="commenter"
-            local:MvxBind="Text Initials" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="10dp"
-            android:text="comment"
-            local:MvxBind="Text FullName" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textSize="10dp"
-            android:layout_marginRight="5dp"
-            android:textStyle="bold"
-            android:text="date"
-            local:MvxBind="Text CreateDate" />
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:textSize="10dp"
+        android:layout_marginRight="5dp"
+        android:textStyle="bold"
+        android:text="Name" />
 </LinearLayout>

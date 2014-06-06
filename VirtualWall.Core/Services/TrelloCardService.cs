@@ -61,7 +61,7 @@ namespace VirtualWall.Core.Services {
             GetBoardLists();
             foreach (var trelloCard in cards)
             {
-                trelloCard.TrelloMembers = GetMembers(trelloCard.ShortLink);
+                trelloCard.TrelloMembers = GetMembers(trelloCard.ShortLink).ToList();
                 var list = _trelloLists.FirstOrDefault(x => x.Id == trelloCard.IdList);
                 if (list != null)
                 {

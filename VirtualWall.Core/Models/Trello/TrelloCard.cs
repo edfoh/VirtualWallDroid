@@ -1,4 +1,6 @@
-﻿namespace VirtualWall.Core.Models.Trello
+﻿using System.Collections.Generic;
+
+namespace VirtualWall.Core.Models.Trello
 {
     public class TrelloCard
 	{
@@ -14,7 +16,7 @@
 
 	    public string IdList { get; set; }
 
-        public TrelloMember[] TrelloMembers { get; set; }
+        public List<TrelloMember> TrelloMembers { get; set; }
 	}
 
     public class TrelloMember

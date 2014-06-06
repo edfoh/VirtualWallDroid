@@ -54,13 +54,14 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:text="Activities" />
+            android:text="Members" />
         <Mvx.MvxListView
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            local:MvxBind="ItemsSource CardActivities"
-            local:MvxItemTemplate="@layout/member_detail" />
+            local:MvxBind="ItemsSource CardDetail.TrelloMembers"
+            local:MvxItemTemplate="@layout/activity_detail"
+            android:background="#333333" />
     </LinearLayout>
 <!-- Footer -->
     <LinearLayout

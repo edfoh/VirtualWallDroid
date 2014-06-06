@@ -54,7 +54,7 @@ namespace VirtualWall.Core.ViewModels
 
         private void Filter()
         {
-            StoryCards = _trelloCards.Where(x => x.Desc.Contains(SearchTerm) || x.Name.Contains(SearchTerm)).ToList();
+            StoryCards = _trelloCards.Where(x => x.Desc.ToLower().Contains(SearchTerm) || x.Name.ToLower().Contains(SearchTerm)).ToList();
         }
 
 
@@ -94,6 +94,7 @@ namespace VirtualWall.Core.ViewModels
         private void Refresh()
         {
             StoryCards = _trelloCards = _cardService.GetCards(_id);
+            ClearFilter();
         }
     }
 
