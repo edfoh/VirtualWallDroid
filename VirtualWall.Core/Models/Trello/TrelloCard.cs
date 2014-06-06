@@ -1,6 +1,6 @@
 ﻿namespace VirtualWall.Core.Models.Trello
 {
-	public class TrelloCard
+    public class TrelloCard
 	{
 		public string Name { get;  set; }
 

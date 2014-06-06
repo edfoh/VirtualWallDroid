@@ -8,21 +8,31 @@ using VirtualWall.Core.Services;
 
 namespace VirtualWall.Core.ViewModels
 {
-    public class FirstViewModel : MvxViewModel
+    public class CardsViewModel : MvxViewModel
     {
-        private string _searchTerm;
-        private List<TrelloCard> _trelloCards;
-        private List<TrelloCard> _storyCards;
+        private readonly ICardService _cardService;
 
-        public FirstViewModel(ICardService cardService, INfcService nfcService)
+        public CardsViewModel(ICardService cardService, INfcService nfcService)
+
         {
+            _cardService = cardService;
+
             nfcService.DisplayCardAction = i =>
             {
                 var card = cardService.GetCardForId(i);
                 nfcService.DeepLinkTo(card.ShortUrl);
             };
+           
+        }
 
-            StoryCards = _trelloCards = cardService.GetCards();
+        public class Nav {
+            public string Id { get; set; }
+        }
+
+        public void Init(Nav navigation) {
+
+            // get card detail from service using id
+            StoryCards = _cardService.GetCards(navigation.Id);
         }
 
         public string SearchTerm

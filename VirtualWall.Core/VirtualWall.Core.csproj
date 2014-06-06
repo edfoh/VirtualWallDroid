@@ -40,6 +40,7 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="Models\Card.cs" />
+    <Compile Include="Models\Trello\TrelloBoard.cs" />
     <Compile Include="Models\Trello\TrelloCard.cs" />
     <Compile Include="Models\Trello\TrelloList.cs" />
     <Compile Include="Nfc\ITagGeneratorService.cs" />
@@ -48,8 +49,9 @@
     <Compile Include="Services\TrelloCardService.cs" />
     <Compile Include="Nfc\TagGeneratorService.cs" />
     <Compile Include="Services\ICardService.cs" />
+    <Compile Include="ViewModels\BoardsViewModel.cs" />
     <Compile Include="ViewModels\CardDetailsViewModel.cs" />
-    <Compile Include="ViewModels\FirstViewModel.cs" />
+    <Compile Include="ViewModels\CardsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Cirrious.CrossCore">
