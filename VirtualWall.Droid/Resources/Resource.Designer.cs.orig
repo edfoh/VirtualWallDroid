@@ -66,6 +66,12 @@ namespace VirtualWall.Droid
 			public const int card = 2130837504;
 			
 			// aapt resource value: 0x7f020001
+<<<<<<< HEAD
+			public const int Redo = 2130837505;
+			
+			// aapt resource value: 0x7f020002
+			public const int splash = 2130837506;
+=======
 			public const int Icon = 2130837505;
 			
 			// aapt resource value: 0x7f020002
@@ -75,13 +81,11 @@ namespace VirtualWall.Droid
 			public const int nfc_large = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int Redo = 2130837508;
+			public const int splash = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int splash = 2130837509;
-			
-			// aapt resource value: 0x7f020006
-			public const int wifi = 2130837510;
+			public const int wifi = 2130837509;
+>>>>>>> prettify
 			
 			static Drawable()
 			{
@@ -134,13 +138,14 @@ namespace VirtualWall.Droid
 			public const int item_card = 2130903045;
 			
 			// aapt resource value: 0x7f030006
+<<<<<<< HEAD
 			public const int member_detail = 2130903046;
+=======
+			public const int Nfc = 2130903046;
+>>>>>>> prettify
 			
 			// aapt resource value: 0x7f030007
-			public const int Nfc = 2130903047;
-			
-			// aapt resource value: 0x7f030008
-			public const int SplashScreen = 2130903048;
+			public const int SplashScreen = 2130903047;
 			
 			static Layout()
 			{
