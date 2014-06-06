@@ -11,6 +11,8 @@ namespace VirtualWall.Core.ViewModels
     public class CardsViewModel : MvxViewModel
     {
         private readonly ICardService _cardService;
+        private List<TrelloCard> _trelloCards;
+        private List<TrelloCard> _storyCards;
 
         private string _searchTerm;
 
@@ -34,7 +36,7 @@ namespace VirtualWall.Core.ViewModels
         public void Init(Nav navigation) {
 
             // get card detail from service using id
-            StoryCards = _cardService.GetCards(navigation.Id);
+            StoryCards = _trelloCards = _cardService.GetCards(navigation.Id);
         }
 
         public string SearchTerm
@@ -54,11 +56,11 @@ namespace VirtualWall.Core.ViewModels
         }
 
 
-        private List<TrelloCard> _trelloCards; 
+        
         public List<TrelloCard> StoryCards
         {
-            get { return _trelloCards; }
-            set { _trelloCards = value; RaisePropertyChanged(() => StoryCards); }
+            get { return _storyCards; }
+            set { _storyCards = value; RaisePropertyChanged(() => StoryCards); }
         }
 
         public ICommand ShowDetailCommand {
