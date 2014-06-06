@@ -11,7 +11,7 @@ namespace VirtualWall.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 				
-            RegisterAppStart<ViewModels.FirstViewModel>();
+            RegisterAppStart<ViewModels.BoardsViewModel>();
         }
     }
 }

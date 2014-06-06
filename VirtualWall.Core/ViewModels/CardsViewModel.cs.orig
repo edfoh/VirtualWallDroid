@@ -8,19 +8,28 @@ using VirtualWall.Core.Services;
 
 namespace VirtualWall.Core.ViewModels
 {
-    public class FirstViewModel : MvxViewModel
+    public class CardsViewModel : MvxViewModel
     {
+<<<<<<< HEAD:VirtualWall.Core/ViewModels/FirstViewModel.cs
         private string _searchTerm;
         private List<TrelloCard> _trelloCards;
         private List<TrelloCard> _storyCards;
 
         public FirstViewModel(ICardService cardService, INfcService nfcService)
+=======
+        private readonly ICardService _cardService;
+
+        public CardsViewModel(ICardService cardService, INfcService nfcService)
+>>>>>>> added new boards view:VirtualWall.Core/ViewModels/CardsViewModel.cs
         {
+            _cardService = cardService;
+
             nfcService.DisplayCardAction = i =>
             {
                 var card = cardService.GetCardForId(i);
                 nfcService.DeepLinkTo(card.ShortUrl);
             };
+<<<<<<< HEAD:VirtualWall.Core/ViewModels/FirstViewModel.cs
 
             StoryCards = _trelloCards = cardService.GetCards();
         }
@@ -34,6 +43,19 @@ namespace VirtualWall.Core.ViewModels
                 RaisePropertyChanged(() => SearchTerm);
                 Filter();
             }
+=======
+           
+        }
+
+        public class Nav {
+            public string Id { get; set; }
+        }
+
+        public void Init(Nav navigation) {
+
+            // get card detail from service using id
+            StoryCards = _cardService.GetCards(navigation.Id);
+>>>>>>> added new boards view:VirtualWall.Core/ViewModels/CardsViewModel.cs
         }
 
         private void Filter()

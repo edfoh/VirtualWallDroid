@@ -7,8 +7,8 @@ using VirtualWall.Droid.Services;
 
 namespace VirtualWall.Droid.Views
 {
-    [Activity(Label = "View for FirstViewModel")]
-    public class FirstView : MvxActivity
+    [Activity(Label = "Cards")]
+    public class CardsView : MvxActivity
     {
         private INfcService _nfcService;
         private INfcService NfcService { get { return _nfcService = _nfcService ?? Mvx.Resolve<INfcService>(); } }
@@ -16,12 +16,12 @@ namespace VirtualWall.Droid.Views
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            NfcService nfcService = NfcService as NfcService;
+            var nfcService = NfcService as NfcService;
             if(nfcService != null)
             {
                 nfcService.RegisterActivity(this);
             }
-            SetContentView(Resource.Layout.FirstView);
+            SetContentView(Resource.Layout.CardsView);
         }
     }
 }

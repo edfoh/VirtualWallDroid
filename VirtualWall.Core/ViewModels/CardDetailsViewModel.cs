@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using Cirrious.MvvmCross.ViewModels;
 using VirtualWall.Core.Models.Trello;
 using VirtualWall.Core.Nfc;
