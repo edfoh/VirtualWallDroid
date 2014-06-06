@@ -4,7 +4,8 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-    <Mvx.MvxGridView
+<<<<<<< HEAD:VirtualWall.Droid/Resources/layout/FirstView.axml
+    <LinearLayout
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
@@ -21,6 +22,10 @@
             android:text="X"
             local:MvxBind="Click ClearFilterCommand" />
     </LinearLayout>
+    <Mvx.MvxListView
+=======
+    <Mvx.MvxGridView
+>>>>>>> added new boards view:VirtualWall.Droid/Resources/layout-land/FirstView.axml
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         local:MvxBind="ItemsSource StoryCards; ItemClick ShowDetailCommand"

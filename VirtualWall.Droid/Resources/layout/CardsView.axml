@@ -4,7 +4,24 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-    <Mvx.MvxGridView
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_width="0px"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:hint="Filter Cards"
+            local:MvxBind="Text SearchTerm" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X"
+            local:MvxBind="Click ClearFilterCommand" />
+    </LinearLayout>
+    <Mvx.MvxListView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         local:MvxBind="ItemsSource StoryCards; ItemClick ShowDetailCommand"

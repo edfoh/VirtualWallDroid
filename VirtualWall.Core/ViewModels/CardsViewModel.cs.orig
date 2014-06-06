@@ -10,31 +10,28 @@ namespace VirtualWall.Core.ViewModels
 {
     public class CardsViewModel : MvxViewModel
     {
+<<<<<<< HEAD:VirtualWall.Core/ViewModels/FirstViewModel.cs
+        private string _searchTerm;
+        private List<TrelloCard> _trelloCards;
+        private List<TrelloCard> _storyCards;
+
+        public FirstViewModel(ICardService cardService, INfcService nfcService)
+=======
         private readonly ICardService _cardService;
 
-        private string _searchTerm;
-
         public CardsViewModel(ICardService cardService, INfcService nfcService)
-
+>>>>>>> added new boards view:VirtualWall.Core/ViewModels/CardsViewModel.cs
         {
             _cardService = cardService;
 
             nfcService.DisplayCardAction = i =>
             {
-                var card = _cardService.GetCardForId(i);
+                var card = cardService.GetCardForId(i);
                 nfcService.DeepLinkTo(card.ShortUrl);
             };
-           
-        }
+<<<<<<< HEAD:VirtualWall.Core/ViewModels/FirstViewModel.cs
 
-        public class Nav {
-            public string Id { get; set; }
-        }
-
-        public void Init(Nav navigation) {
-
-            // get card detail from service using id
-            StoryCards = _cardService.GetCards(navigation.Id);
+            StoryCards = _trelloCards = cardService.GetCards();
         }
 
         public string SearchTerm
@@ -46,6 +43,19 @@ namespace VirtualWall.Core.ViewModels
                 RaisePropertyChanged(() => SearchTerm);
                 Filter();
             }
+=======
+           
+        }
+
+        public class Nav {
+            public string Id { get; set; }
+        }
+
+        public void Init(Nav navigation) {
+
+            // get card detail from service using id
+            StoryCards = _cardService.GetCards(navigation.Id);
+>>>>>>> added new boards view:VirtualWall.Core/ViewModels/CardsViewModel.cs
         }
 
         private void Filter()
@@ -53,12 +63,10 @@ namespace VirtualWall.Core.ViewModels
             StoryCards = _trelloCards.Where(x => x.Desc.Contains(SearchTerm) || x.Name.Contains(SearchTerm)).ToList();
         }
 
-
-        private List<TrelloCard> _trelloCards; 
         public List<TrelloCard> StoryCards
         {
-            get { return _trelloCards; }
-            set { _trelloCards = value; RaisePropertyChanged(() => StoryCards); }
+            get { return _storyCards; }
+            set { _storyCards = value; RaisePropertyChanged(() => StoryCards);}
         }
 
         public ICommand ShowDetailCommand {

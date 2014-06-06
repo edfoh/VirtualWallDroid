@@ -106,7 +106,6 @@
     <AndroidResource Include="Resources\layout\item_card.axml" />
     <AndroidResource Include="Resources\layout\CardDetails.axml" />
     <AndroidResource Include="Resources\layout\activity_detail.axml" />
-    <AndroidResource Include="Resources\layout-land\FirstView.axml" />
     <AndroidResource Include="Resources\layout\BoardsView.axml" />
     <AndroidResource Include="Resources\layout\item_board.axml" />
   </ItemGroup>
@@ -129,6 +128,9 @@
       <Project>{686016d2-692f-4e5f-9865-85668991e369}</Project>
       <Name>VirtualWall.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\layout-land\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
