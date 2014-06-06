@@ -14,19 +14,19 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:textSize="20dp"
-            android:text="name" />
+            android:textSize="30dp"
+            android:text="Name:" />
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:textSize="30dp"
+            android:textSize="20dp"
             android:text="description"
             local:MvxBind="Text CardDetail.Name" />
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:textSize="20dp"
-            android:text="Description" />
+            android:textSize="30dp"
+            android:text="Description:" />
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -35,8 +35,8 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:textSize="20dp"
-            android:text="Swim Lane" />
+            android:textSize="30dp"
+            android:text="Swim Lane:" />
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -50,17 +50,17 @@
         android:layout_weight="1"
         android:layout_marginBottom="5dp"
         android:background="#000000">
-    <!--<TextView
+        <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:text="Activities" />-->
-    <!--<Mvx.MvxListView
+            android:text="Activities" />
+        <Mvx.MvxListView
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             local:MvxBind="ItemsSource CardActivities"
-            local:MvxItemTemplate="@layout/activity_detail" />-->
+            local:MvxItemTemplate="@layout/member_detail" />
     </LinearLayout>
 <!-- Footer -->
     <LinearLayout

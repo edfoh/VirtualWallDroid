@@ -13,6 +13,17 @@
 		public string SwimLane { get; set; }
 
 	    public string IdList { get; set; }
+
+        public TrelloMember[] TrelloMembers { get; set; }
 	}
+
+    public class TrelloMember
+    {
+        public string Id { get; set; }
+        public object AvatarHash { get; set; }
+        public string FullName { get; set; }
+        public string Initials { get; set; }
+        public string Username { get; set; }
+    }
 }
 

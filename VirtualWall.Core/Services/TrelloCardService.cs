@@ -61,10 +61,11 @@ namespace VirtualWall.Core.Services {
             GetBoardLists();
             foreach (var trelloCard in cards)
             {
+                trelloCard.TrelloMembers = GetMembers(trelloCard.ShortLink);
                 var list = _trelloLists.FirstOrDefault(x => x.Id == trelloCard.IdList);
                 if (list != null)
                 {
-                    trelloCard.SwimLane = list.Name;    
+                    trelloCard.SwimLane = list.Name; 
                 }
             }
         }
@@ -78,6 +79,20 @@ namespace VirtualWall.Core.Services {
                .ReadAsAsync<TrelloList[]>()
                .Result
                .ToList();
+        }
+
+        TrelloMember[] GetMembers(string cardId)
+        {
+            string memberUrl = "https://api.trello.com/1/cards/" + cardId + "/members?key=a4ecd323fd1e3db088fc6b9a6fa1f896&token=ebca992dd255dac76c55d301559a0e1ec6e5d53b70cce287f37cbb600a745f12";
+            
+            return httpClient
+               .GetAsync(memberUrl)
+               .Result
+               .Content
+               .ReadAsAsync<TrelloMember[]>()
+               .Result
+               .ToArray();
+            
         }
     }
 }

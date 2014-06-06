@@ -108,6 +108,7 @@
     <AndroidResource Include="Resources\layout\activity_detail.axml" />
     <AndroidResource Include="Resources\layout\BoardsView.axml" />
     <AndroidResource Include="Resources\layout\item_board.axml" />
+    <AndroidResource Include="Resources\layout\member_detail.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />

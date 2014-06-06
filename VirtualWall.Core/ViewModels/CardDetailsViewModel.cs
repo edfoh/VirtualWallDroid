@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using System.Collections.Generic;
+using System.Windows.Input;
 using Cirrious.MvvmCross.ViewModels;
 using VirtualWall.Core.Models.Trello;
 using VirtualWall.Core.Nfc;
@@ -29,7 +30,7 @@ namespace VirtualWall.Core.ViewModels
 
         public TrelloCard CardDetail { get; private set; }
 
-        //public IList<CardActivity> CardActivities { get { return CardDetail.CardActivities; } }
+        public IList<TrelloMember> CardActivities { get { return CardDetail.TrelloMembers; } }
 
         public ICommand WriteNfcCommand {
             get {

@@ -33,10 +33,12 @@ namespace VirtualWall.Core.ViewModels
             public string Id { get; set; }
         }
 
+        private string _id;
         public void Init(Nav navigation) {
 
             // get card detail from service using id
-            StoryCards = _trelloCards = _cardService.GetCards(navigation.Id);
+            _id = navigation.Id;
+            Refresh();
         }
 
         public string SearchTerm
@@ -79,6 +81,19 @@ namespace VirtualWall.Core.ViewModels
             {
                 return new MvxCommand(ClearFilter);
             }
+        }
+
+        public ICommand RefreshCommand
+        {
+            get
+            {
+                return new MvxCommand(Refresh);
+            }
+        }
+
+        private void Refresh()
+        {
+            StoryCards = _trelloCards = _cardService.GetCards(_id);
         }
     }
 
