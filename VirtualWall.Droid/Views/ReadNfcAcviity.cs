@@ -32,7 +32,8 @@ namespace VirtualWall.Droid.Views
         protected override void OnCreate(Bundle bundle) 
         {
             base.OnCreate(bundle);
-            
+            SetContentView(Resource.Layout.Nfc);
+
             _nfcAdapter = NfcAdapter.GetDefaultAdapter(this);
 
             if (_nfcAdapter == null) {

@@ -90,6 +90,7 @@
     <Compile Include="Setup.cs" />
     <Compile Include="SplashScreen.cs" />
     <Compile Include="StringConstants.cs" />
+    <Compile Include="Views\BindableProgress.cs" />
     <Compile Include="Views\BoardsView.cs" />
     <Compile Include="Views\CardDetailsView.cs" />
     <Compile Include="Views\CardsView.cs" />
@@ -109,12 +110,18 @@
     <AndroidResource Include="Resources\layout\BoardsView.axml" />
     <AndroidResource Include="Resources\layout\item_board.axml" />
     <AndroidResource Include="Resources\layout\member_detail.axml" />
+    <AndroidResource Include="Resources\layout\Nfc.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\card.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Icon.png" />
+    <AndroidResource Include="Resources\drawable\Icon_old.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
@@ -123,6 +130,9 @@
     <AndroidResource Include="Resources\drawable\splash.png" />
     <AndroidResource Include="Resources\xml\nfc_tech_list.xml" />
     <AndroidResource Include="Resources\drawable\Redo.png" />
+    <AndroidResource Include="Resources\drawable\wifi.png" />
+    <AndroidResource Include="Resources\drawable\Icon.png" />
+    <AndroidResource Include="Resources\drawable\nfc_large.png" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>

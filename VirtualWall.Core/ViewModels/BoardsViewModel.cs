@@ -19,11 +19,24 @@ namespace VirtualWall.Core.ViewModels
 
         public IList<TrelloBoard> Boards { get; set; }
 
+        private bool _isBusy;
+        public bool IsBusy {
+            get { return _isBusy; }
+            set { _isBusy = value; RaisePropertyChanged(() => IsBusy); }
+        }
+
         public ICommand ShowCardsCommand 
         {
             get 
             {
-                return new MvxCommand<TrelloBoard>(item => ShowViewModel<CardsViewModel>(new CardsViewModel.Nav() { Id = item.ShortLink }));
+                return new MvxCommand<TrelloBoard>(item =>
+                {
+                    if (IsBusy)
+                        return;
+                    
+                    IsBusy = true;
+                    ShowViewModel<CardsViewModel>(new CardsViewModel.Nav() { Id = item.ShortLink });
+                });
             }
         }
     }

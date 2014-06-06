@@ -3,17 +3,25 @@
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:background="@drawable/card">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:layout_margin="5dp"
+        android:layout_gravity="center_vertical"
         android:textSize="20dp"
-        local:MvxBind="Text Name" />
+        local:MvxBind="Text Name"
+        android:textColor="#000000" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:layout_weight="1"
+        android:layout_margin="5dp"
         android:textSize="10dp"
-        local:MvxBind="Text Desc" />
+        local:MvxBind="Text Desc"
+        android:textColor="#000000"
+        android:text="Desc" />
 </LinearLayout>

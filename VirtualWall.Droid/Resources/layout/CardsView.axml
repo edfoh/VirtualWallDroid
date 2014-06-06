@@ -29,6 +29,8 @@
     <Mvx.MvxListView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10.0sp"
         local:MvxBind="ItemsSource StoryCards; ItemClick ShowDetailCommand"
         local:MvxItemTemplate="@layout/item_card" />
 </LinearLayout>
