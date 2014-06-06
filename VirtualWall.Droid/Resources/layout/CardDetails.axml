@@ -14,6 +14,11 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:textSize="20dp"
+            android:text="name" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
             android:textSize="30dp"
             android:text="description"
             local:MvxBind="Text CardDetail.Name" />
@@ -21,7 +26,17 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:textSize="20dp"
+            android:text="Description" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:textSize="20dp"
             local:MvxBind="Text CardDetail.Desc" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:textSize="20dp"
+            android:text="Swim Lane" />
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -56,13 +71,13 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:text="Deep Link"
+            android:text="Open in Trello"
             local:MvxBind="Click DeepLinkCommand" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:text="Write to NFC"
+            android:text="Link to Physical Card"
             local:MvxBind="Click WriteNfcCommand" />
     </LinearLayout>
 </LinearLayout>
