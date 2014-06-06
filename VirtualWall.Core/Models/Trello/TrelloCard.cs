@@ -12,7 +12,7 @@
 
 		public string SwimLane { get; set; }
 
-	    public string IdBoard { get; set; }
+	    public string IdList { get; set; }
 	}
 }
 

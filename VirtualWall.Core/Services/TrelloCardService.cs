@@ -42,7 +42,7 @@ namespace VirtualWall.Core.Services {
             GetBoardLists();
             foreach (var trelloCard in cards)
             {
-                var list = _trelloLists.FirstOrDefault(x => x.Id == trelloCard.IdBoard);
+                var list = _trelloLists.FirstOrDefault(x => x.Id == trelloCard.IdList);
                 if (list != null)
                 {
                     trelloCard.SwimLane = list.Name;    
